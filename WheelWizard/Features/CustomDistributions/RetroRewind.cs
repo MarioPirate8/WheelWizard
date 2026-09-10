@@ -227,6 +227,7 @@ public class RetroRewind : IDistribution
             return Fail("Failed to check for updates");
 
         var latestVersion = latestVersionResult.Value;
+        Console.WriteLine($"RR DEBUG current={currentVersion} latest={latestVersion}");
         var isUpToDate = currentVersion.ComparePrecedenceTo(latestVersion) >= 0;
         return isUpToDate;
     }
